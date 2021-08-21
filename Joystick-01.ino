@@ -24,30 +24,33 @@
  * 
  * We're going to try keeping all of the pins used on one side of the board.
  */
-#define PIN_JS_UP PB12
-#define PIN_JS_DN PB13
-#define PIN_JS_LT PB14
-#define PIN_JS_RT PB15
-#define PIN_BT_00 PA8
-#define PIN_BT_01 PA9
-#define PIN_BT_02 PA10
+#define PIN_JS_UP PB15
+#define PIN_JS_DN PB12
+
+#define PIN_JS_LT PB13
+#define PIN_JS_RT PB14
+
 /** PA11 and PA12 are USB D- & D+ **/
-/** Skip over A15 also **/
-#define PIN_BT_03 PB3
-#define PIN_BT_04 PB4
-#define PIN_BT_05 PB5
-#define PIN_BT_06 PB6
-#define PIN_BT_07 PB7
-#define PIN_BT_08 PB8  /* START */
-#define PIN_BT_09 PB9  /* SELECT */
+/** Skip over A10 also **/
+/** Original code put BT_02 on PA10 instead of A15 **/
+#define PIN_BT_01 PB6  /* X  */
+#define PIN_BT_02 PB4  /* R1 */ 
+#define PIN_BT_03 PB11  /* Y  */ 
+#define PIN_BT_04 PB8  /* L1 */
+#define PIN_BT_05 PB7  /* A  */
+#define PIN_BT_06 PB5  /* B  */
+#define PIN_BT_07 PA15 /* R2 */
+#define PIN_BT_08 PB9  /* R1 */
+#define PIN_BT_09 PA9  /* START */ 
+#define PIN_BT_10 PA8  /* SELECT */
 
 const int js_pins[] = {
  PIN_JS_UP, PIN_JS_DN, PIN_JS_LT, PIN_JS_RT
 };
  
 const int button_pins[] = {
- PIN_BT_00, PIN_BT_01, PIN_BT_02, PIN_BT_03, PIN_BT_04, 
- PIN_BT_05, PIN_BT_06, PIN_BT_07, PIN_BT_08, PIN_BT_09
+ PIN_BT_01, PIN_BT_02, PIN_BT_03, PIN_BT_04, PIN_BT_05, 
+ PIN_BT_06, PIN_BT_07, PIN_BT_08, PIN_BT_09, PIN_BT_10
 };
 
 #include <USBComposite.h>
